@@ -28,6 +28,7 @@ var currentImageCreatedTime;
 function getPictures(){
 	payload = JSON.parse(ajaxreq.response);
 	imageurl = new Array();
+	
 	post(payload.data.length);
 	
 	for (i = (payload.data.length - 1); i >= 0; i--){
@@ -52,17 +53,13 @@ function getrecent(){
 	bang();
 }
 
-
 function tagsearch(tag){	
 	api_string = "https://api.instagram.com/v1/tags/"+tag+"/media/recent?access_token="+accessToken;
 	bang();
-	//api_string = "https://api.instagram.com/v1/tags/"+tag+"/media/recent?client_id="+clientID;
-	//bang();
 }
 
 function popular(){
 	api_string = "https://api.instagram.com/v1/media/popular?access_token="+accessToken;
-	//api_string = "https://api.instagram.com/v1/media/popular?client_id="+clientID;
 	bang();
 }
 
@@ -72,7 +69,6 @@ function filewriteCallback(){
 function init(){
 	imagepath = this.patcher.filepath.replace("patchers/InstaFeed.maxpat","media/");
 	outlet(1,imagepath);
-	post("\n init");
 }
 
 function getImageURL(image){
