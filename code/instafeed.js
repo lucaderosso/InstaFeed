@@ -72,7 +72,8 @@ function init(){
 }
 
 function getImageURL(image){
-	var pname = imageurl[image].replace(/^.*(\\|\/|\:)/, '');
+	// var pname = imageurl[image].replace(/^.*(\\|\/|\:)/, '');
+	var pname = payload.data[image].created_time+".jpg";
 	var pp = new XMLHttpRequest();
 	pp.open("GET",imageurl[image]);
 	pp._setRequestKey("filename_out",imagepath+pname);
