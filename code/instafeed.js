@@ -11,7 +11,7 @@ outlets = 2;
 
 init();
 
-function bang(){
+function request(){
 	//create a XMLHttpRequest object
 	ajaxreq = new XMLHttpRequest();
 	//set the HTTP message to be sent (usually a special formatted URL)
@@ -50,17 +50,17 @@ function getPictures(){
 
 function getrecent(){	
 	api_string = "https://api.instagram.com/v1/users/self/media/recent/?access_token="+accessToken;
-	bang();
+	request();
 }
 
 function tagsearch(tag){	
 	api_string = "https://api.instagram.com/v1/tags/"+tag+"/media/recent?access_token="+accessToken;
-	bang();
+	request();
 }
 
 function popular(){
 	api_string = "https://api.instagram.com/v1/media/popular?access_token="+accessToken;
-	bang();
+	request();
 }
 
 function filewriteCallback(){
